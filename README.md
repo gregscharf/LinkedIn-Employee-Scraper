@@ -7,6 +7,6 @@ The copy() function meant to automatically copy all the names to the clipboard d
 
 ## Usage
     - Navigate to a company's LinkedIn page and click on People.
-    - Open the Browser's Web Developer Tools, paste the javascript into the console and click Run.
+    - Open the Browser's Web Developer Tools, paste scraper.js into the console as seen in the screenshot below and click Run.
     
 ![firefox example](./scrape.png)
