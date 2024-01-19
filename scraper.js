@@ -5,18 +5,24 @@ function scrapeUsers() {
   var counter = 0;
   profileCardEls.forEach(profileName => {
     var nameEl = profileName.querySelector('.lt-line-clamp--single-line.org-people-profile-card__profile-title');
-
     if (nameEl) {
       var fullName = nameEl.textContent.trim();
       if (fullName.indexOf('LinkedIn') == -1){
         counter += 1;
         var [firstName, lastName] = fullName.split(' ');
+        // username scheme: firstname.lastname
         fullList += `${firstName}.${lastName}\n`;
+        //username scheme: firstinitial and lastname
+        // fullList += `${firstName.charAt(0)}${lastName}\n`;
+        //username scheme: first 3 letters of name and lastname
+        // fullList += `${firstName.substring(0, 3)}${lastName}\n`;
+        //username scheme: firstinitial and lastname initial
+        // fullList += `${firstName}${lastName.charAt(0)}\n`;
       }
     }
   });
   console.log(fullList);
-  console.log(`Copied ${counter} employees to clipboard`);
+  console.log(`Found ${counter} employees.`);
   copy(fullList);
 }
 
