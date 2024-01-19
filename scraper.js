@@ -9,13 +9,17 @@ function scrapeUsers() {
       var fullName = nameEl.textContent.trim();
       if (fullName.indexOf('LinkedIn') == -1){
         counter += 1;
-        var [firstName, lastName] = fullName.split(' ');
+        //remove extraneous characters commonly found in LI profile names
+        var sanitizedFullName = fullName.replace(/[(),".|]/g, '');
+        var [firstName, lastName] = sanitizedFullName.split(' ');        
         // username scheme: firstname.lastname
         fullList += `${firstName}.${lastName}\n`;
+        // no username scheme: firstname.lastname
+        // fullList += `${firstName} ${lastName}\n`;
         //username scheme: firstinitial and lastname
         // fullList += `${firstName.charAt(0)}${lastName}\n`;
-        //username scheme: first 3 letters of name and lastname
-        // fullList += `${firstName.substring(0, 3)}${lastName}\n`;
+        //username scheme: first 3 letters of firstname.lastname
+        // fullList += `${firstName.substring(0, 3)}.${lastName}\n`;
         //username scheme: firstinitial and lastname initial
         // fullList += `${firstName}${lastName.charAt(0)}\n`;
       }
