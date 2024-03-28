@@ -6,7 +6,7 @@ The code performs an automated lazy loading of the entire page and when that's d
 The copy() function meant to automatically copy all the names to the clipboard does not currently work when called from a setTimer callback, so either manually copy/paste all the users from the console output or run the body of the scrape() function by itself after the lazy loading of the entire page has finished.
 
 ## Usage
-    - Navigate to a company's LinkedIn page and click on People.
+    - Navigate to a company's LinkedIn page and click on People.  This only works at the following endpoint: /company/COMPANYNAME/people/
     - Open the Browser's Web Developer Tools, paste scraper.js into the console as seen in the screenshot below and click Run.
     
 ![firefox example](./scrape.png)
