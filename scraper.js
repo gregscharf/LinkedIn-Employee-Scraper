@@ -4,7 +4,7 @@ function scrapeUsers() {
   var fullList = "";
   var counter = 0;
   profileCardEls.forEach(profileName => {
-    var nameEl = profileName.querySelector('.lt-line-clamp--single-line.org-people-profile-card__profile-title');
+    var nameEl = profileName.querySelector('.lt-line-clamp--single-line');
     if (nameEl) {
       var fullName = nameEl.textContent.trim();
       if (fullName.indexOf('LinkedIn') == -1){
